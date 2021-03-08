@@ -1,4 +1,4 @@
-package org.nofirst.thingking.in.spring.ioc.overview.dependency.lookup;
+package org.nofirst.thinking.in.spring.ioc.overview.dependency.lookup;
 
 /**
  * 依赖查找示例
