@@ -20,7 +20,6 @@
     <!-- Spring 依赖管理 -->
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aop</artifactId>

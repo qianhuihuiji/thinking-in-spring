@@ -1,4 +1,4 @@
-package org.nofirst.thinking.in.spring.ioc.overview.domain;
+package iocoverview.domain;
 
 public class User {
     private Long id;
@@ -18,5 +18,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
