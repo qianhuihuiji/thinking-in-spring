@@ -9,7 +9,15 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="user" class="iocoverview.domain.User">
-        <property name="id" value="1"></property>
-        <property name="name" value="emen"></property>
+        <property name="id" value="1"/>
+        <property name="name" value="emen"/>
+    </bean>
+
+    <bean id="superUser" class="iocoverview.domain.SuperUser" parent="user" primary="true">
+        <property name="address" value="深圳"/>
+    </bean>
+
+    <bean id="objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"/>
     </bean>
 </beans>
