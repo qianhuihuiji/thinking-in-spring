@@ -1,5 +1,8 @@
 package iocoverview.domain;
 
+/**
+ * 用户类
+ */
 public class User {
     private Long id;
     private String name;
