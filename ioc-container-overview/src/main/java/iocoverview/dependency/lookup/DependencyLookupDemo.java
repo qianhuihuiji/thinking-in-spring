@@ -25,8 +25,8 @@ public class DependencyLookupDemo {
         // 按照注解类型查找集合对象
         lookupByAnnotationType(beanFactory);
 
-        lookupInRealTime(beanFactory);
-        lookupInLazy(beanFactory);
+//        lookupInRealTime(beanFactory);
+//        lookupInLazy(beanFactory);
     }
 
     private static void lookupByAnnotationType(BeanFactory beanFactory) {
