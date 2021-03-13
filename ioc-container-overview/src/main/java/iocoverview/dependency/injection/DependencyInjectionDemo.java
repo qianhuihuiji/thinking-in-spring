@@ -2,6 +2,7 @@ package iocoverview.dependency.injection;
 
 import iocoverview.repository.UserRepository;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -16,6 +17,17 @@ public class DependencyInjectionDemo {
 
         UserRepository userRepository = beanFactory.getBean("userRepository", UserRepository.class);
 
-        System.out.println(userRepository.getUsers());
+//        System.out.println(userRepository.getUsers());
+
+        // 依赖注入
+//        System.out.println(userRepository.getBeanFactory());
+//        System.out.println(beanFactory == userRepository.getBeanFactory());
+
+        ObjectFactory userFactory = userRepository.getObjectFactory();
+        System.out.println(userFactory.getObject());
+        System.out.println(beanFactory == userFactory.getObject());
+
+        // 依赖查找（错误示例）
+//        System.out.println(beanFactory.getBean(BeanFactory.class));
     }
 }
