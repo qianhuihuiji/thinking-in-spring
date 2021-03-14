@@ -23,6 +23,9 @@ public class AnnotationApplicationContextAsIoCContainerDemo {
 
         // 依赖查找
         lookupCollectionByType(applicationContext);
+
+        // 关闭依赖上下文
+        applicationContext.close();
     }
 
     @Bean
