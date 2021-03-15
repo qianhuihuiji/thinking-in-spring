@@ -9,7 +9,7 @@ import org.springframework.beans.factory.support.GenericBeanDefinition;
 /**
  * {@link BeanDefinition} 构建示例
  */
-public class beanDefinitionCreationDemo {
+public class BeanDefinitionCreationDemo {
 
     public static void main(String[] args) {
         // 1.通过 BeanDefinitionBuilder 构建
