@@ -30,4 +30,11 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public static User createUser() {
+        User user = new User();
+        user.setName("emen-create-user");
+        user.setId(100L);
+        return user;
+    }
 }
