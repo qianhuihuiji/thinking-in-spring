@@ -34,7 +34,13 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
     public void destroy() throws Exception {
         System.out.println("DisposableBean#destroy() ： UserFactory 销毁中...");
     }
+
     public void doDestroy() throws Exception {
-        System.out.println("DisposableBean#destroy() ： UserFactory 销毁中...");
+        System.out.println("自定义销毁方法 ： UserFactory 销毁中...");
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("当前 DefaultUserFactory 对象正在被垃圾回收...");
     }
 }

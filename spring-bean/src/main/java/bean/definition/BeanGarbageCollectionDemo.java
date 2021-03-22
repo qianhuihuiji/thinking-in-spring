@@ -5,36 +5,26 @@ import bean.factory.UserFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 
 /**
- * Bean 实例化 Demo
+ * Bean GC Demo
  */
-@Configuration
-public class BeanInitializationDemo {
+public class BeanGarbageCollectionDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 创建 BeanFactory 实例
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class（配置类）
         applicationContext.register(BeanInitializationDemo.class);
         // 启动应用上下文
         applicationContext.refresh();
-        // 非延迟初始化在 Spring 应用上下文启动时，被初始化
-        // 延迟加载是依赖查找触发了初始化
-        System.out.println("Spring 应用上下文已启动...");
-        // 依赖查找
         UserFactory userFactory = applicationContext.getBean(UserFactory.class);
         System.out.println(userFactory);
         // 显示关闭上下文
-        System.out.println("Spring 应用上下文准备关闭...");
         applicationContext.close();
-        System.out.println("Spring 应用上下文已关闭...");
-    }
-
-    @Bean(initMethod = "initUserFactory", destroyMethod = "doDestroy")
-//    @Lazy
-    public UserFactory userFactory() {
-        return new DefaultUserFactory();
+        // 触发垃圾回收
+        userFactory = null;
+        System.gc();
+        Thread.sleep(500L);
     }
 }
