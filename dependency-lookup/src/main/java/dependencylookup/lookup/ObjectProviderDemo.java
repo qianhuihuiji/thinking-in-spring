@@ -1,4 +1,4 @@
-package lookup;
+package dependencylookup.lookup;
 
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
