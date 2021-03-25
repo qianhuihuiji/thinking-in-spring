@@ -8,7 +8,7 @@
 
     <import resource="dependency-lookup-context.xml"/>
 
-    <bean id="userRepository" class="iocoverview.repository.UserRepository" autowire="byType"> <!-- AutoWiring -->
+    <bean id="userRepository" class="org.nofirst.thinking.in.spring.iocoverview.repository.UserRepository" autowire="byType"> <!-- AutoWiring -->
         <!-- 手动配置 -->
 <!--        <property name="users">-->
 <!--            <util:list>-->

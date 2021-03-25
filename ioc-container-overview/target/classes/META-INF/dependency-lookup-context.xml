@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="user" class="iocoverview.domain.User">
+    <bean id="user" class="org.nofirst.thinking.in.spring.iocoverview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="emen"/>
     </bean>
 
-    <bean id="superUser" class="iocoverview.domain.SuperUser" parent="user" primary="true">
+    <bean id="superUser" class="org.nofirst.thinking.in.spring.iocoverview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="深圳"/>
     </bean>
 
