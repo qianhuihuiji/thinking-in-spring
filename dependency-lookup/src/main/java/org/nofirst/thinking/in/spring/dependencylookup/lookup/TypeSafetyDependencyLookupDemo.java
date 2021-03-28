@@ -69,6 +69,6 @@ public class TypeSafetyDependencyLookupDemo {
         }catch (BeansException e) {
             e.printStackTrace();
         }
-    System.err.println("============== End ============");
+        System.err.println("============== End ============");
     }
 }
