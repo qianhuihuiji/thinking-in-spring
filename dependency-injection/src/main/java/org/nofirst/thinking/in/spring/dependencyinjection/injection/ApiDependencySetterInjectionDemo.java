@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 /**
  * 基于 Api 实现的依赖 Setter 方法注入示例
  *
- * @author: <a href="https://git.code.oa.com/u/emenmei">emenmei</a>
  * @date: 2021/03/29
  **/
 public class ApiDependencySetterInjectionDemo {

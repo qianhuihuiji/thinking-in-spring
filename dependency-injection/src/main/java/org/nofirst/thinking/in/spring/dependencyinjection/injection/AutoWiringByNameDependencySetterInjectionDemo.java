@@ -6,7 +6,6 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 /**
  * "byName" 自动绑定实现的示例
  *
- * @author: <a href="https://git.code.oa.com/u/emenmei">emenmei</a>
  * @date: 2021/03/29
  **/
 public class AutoWiringByNameDependencySetterInjectionDemo {

@@ -6,17 +6,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 /**
- * 基于注解实现的依赖 Setter 方法注入示例
+ * 基于注解实现的依赖 Constructor 注入示例
  *
  * @date: 2021/03/29
  **/
-public class AnnotationDependencySetterInjectionDemo {
+public class AnnotationDependencyConstructorInjectionDemo {
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class 配置类
-        applicationContext.register(AnnotationDependencySetterInjectionDemo.class);
+        applicationContext.register(AnnotationDependencyConstructorInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -37,8 +37,6 @@ public class AnnotationDependencySetterInjectionDemo {
 
     @Bean
     public UserHolder userHolder(User user) {
-        UserHolder userHolder = new UserHolder();
-        userHolder.setUser(user);
-        return userHolder;
+        return new UserHolder(user);
     }
 }

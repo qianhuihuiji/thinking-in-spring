@@ -7,7 +7,6 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  * "byType" 自动绑定实现的示例
  * 因为 superUser Bean 被标注了 primary="true"，所以尽管 User 类型有两个 Bean，也不会报错
  *
- * @author: <a href="https://git.code.oa.com/u/emenmei">emenmei</a>
  * @date: 2021/03/29
  **/
 public class AutoWiringByTypeDependencySetterInjectionDemo {
