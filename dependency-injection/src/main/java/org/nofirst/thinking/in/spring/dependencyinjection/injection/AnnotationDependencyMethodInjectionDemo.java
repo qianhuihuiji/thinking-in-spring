@@ -8,24 +8,36 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 /**
- * 基于 @Autowired 注解实现的依赖字段注入示例
+ * 基于 @Autowired 注解实现的依赖方法注入示例
  *
  * @date: 2021/03/29
  **/
-public class AnnotationDependencyFieldInjectionDemo {
+public class AnnotationDependencyMethodInjectionDemo {
 
-    @Autowired // @Autowired 会忽略静态字段
-//    private static User user;
     private UserHolder userHolder;
 
-    @Resource
     private UserHolder userHolder2;
+
+    @Autowired // 不关心方法名，只要有 @Autowired、@Resource 注解，已经参数中包含可以注入的依赖，就可以通过方法注入
+    public void init1(UserHolder userHolder) {
+        this.userHolder = userHolder;
+    }
+
+    @Resource
+    public void init2(UserHolder userHolder) {
+        this.userHolder2 = userHolder;
+    }
+
+    @Bean
+    public UserHolder userHolder(User user) {
+        return new UserHolder(user);
+    }
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 注册 Configuration Class 配置类
-        applicationContext.register(AnnotationDependencyFieldInjectionDemo.class);
+        applicationContext.register(AnnotationDependencyMethodInjectionDemo.class);
 
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
 
@@ -36,7 +48,8 @@ public class AnnotationDependencyFieldInjectionDemo {
         // 启动上下文
         applicationContext.refresh();
 
-        AnnotationDependencyFieldInjectionDemo demo = applicationContext.getBean(AnnotationDependencyFieldInjectionDemo.class);
+        AnnotationDependencyMethodInjectionDemo demo = applicationContext.getBean(
+                AnnotationDependencyMethodInjectionDemo.class);
         // @Autowired 字段绑定
         UserHolder userHolder = demo.userHolder;
         System.out.println(userHolder);
@@ -46,10 +59,5 @@ public class AnnotationDependencyFieldInjectionDemo {
 
         // 关闭上下文
         applicationContext.close();
-    }
-
-    @Bean
-    public UserHolder userHolder(User user) {
-        return new UserHolder(user);
     }
 }
