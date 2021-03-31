@@ -1,5 +1,7 @@
 package org.nofirst.thinking.in.spring.iocoverview.domain;
 
+import java.util.Arrays;
+import java.util.List;
 import org.nofirst.thinking.in.spring.iocoverview.enums.City;
 import org.springframework.core.io.Resource;
 
@@ -13,7 +15,27 @@ public class User {
 
     private City city;
 
+    private City[] workCities;
+
+    private List<City> lifeCities;
+
     private Resource configFileLocation;
+
+    public List<City> getLifeCities() {
+        return lifeCities;
+    }
+
+    public void setLifeCities(List<City> lifeCities) {
+        this.lifeCities = lifeCities;
+    }
+
+    public City[] getWorkCities() {
+        return workCities;
+    }
+
+    public void setWorkCities(City[] workCities) {
+        this.workCities = workCities;
+    }
 
     public Resource getConfigFileLocation() {
         return configFileLocation;
@@ -53,9 +75,12 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", city=" + city +
+                ", workCities=" + Arrays.toString(workCities) +
+                ", lifeCities=" + lifeCities +
                 ", configFileLocation=" + configFileLocation +
                 '}';
     }
+
     public static User createUser() {
         User user = new User();
         user.setName("emen-create-user");

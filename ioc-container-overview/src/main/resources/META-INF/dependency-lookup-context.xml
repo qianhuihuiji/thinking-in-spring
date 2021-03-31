@@ -12,6 +12,14 @@
         <property name="id" value="1"/>
         <property name="name" value="emen"/>
         <property name="city" value="SHENZHEN"/>
+        <property name="workCities" value="SHENZHEN,SHANGHAI"/>
+<!--        <property name="lifeCities" value="SHENZHEN,BEIJING"/>-->
+        <property name="lifeCities">
+            <list>
+                <value>SHENZHEN</value>
+                <value>BEIJING</value>
+            </list>
+        </property>
         <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
     </bean>
 
