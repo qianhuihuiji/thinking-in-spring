@@ -12,6 +12,7 @@
         <property name="id" value="1"/>
         <property name="name" value="emen"/>
         <property name="city" value="SHENZHEN"/>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
     </bean>
 
     <bean id="superUser" class="org.nofirst.thinking.in.spring.iocoverview.domain.SuperUser" parent="user" primary="true">
