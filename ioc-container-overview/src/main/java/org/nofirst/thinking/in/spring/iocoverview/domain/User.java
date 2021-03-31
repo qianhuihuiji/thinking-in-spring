@@ -1,11 +1,22 @@
 package org.nofirst.thinking.in.spring.iocoverview.domain;
 
+import org.nofirst.thinking.in.spring.iocoverview.enums.City;
+
 /**
  * 用户类
  */
 public class User {
     private Long id;
     private String name;
+    private City city;
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
 
     public Long getId() {
         return id;
@@ -28,6 +39,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", city=" + city +
                 '}';
     }
 

@@ -11,6 +11,7 @@
     <bean id="user" class="org.nofirst.thinking.in.spring.iocoverview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="emen"/>
+        <property name="city" value="SHENZHEN"/>
     </bean>
 
     <bean id="superUser" class="org.nofirst.thinking.in.spring.iocoverview.domain.SuperUser" parent="user" primary="true">
