@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 /**
- * {@link Qualifier}
+ * {@link Qualifier} 示例
  *
  * @date: 2021/03/29
  **/
