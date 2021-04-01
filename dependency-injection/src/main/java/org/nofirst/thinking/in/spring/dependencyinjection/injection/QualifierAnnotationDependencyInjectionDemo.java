@@ -30,7 +30,7 @@ public class QualifierAnnotationDependencyInjectionDemo {
     // user2 -> @Qualifier
 
     @Autowired
-    private Collection<User> allUsers; // 4 个 bean
+    private Collection<User> allUsers; // 4 个 bean --> 扩充成 6 个 bean, superUser,user,user1,user2,user3,user4
 
     @Autowired
     @Qualifier
@@ -93,7 +93,7 @@ public class QualifierAnnotationDependencyInjectionDemo {
         System.out.println("demo.user: " + demo.user);
         // 期待输出 user
         System.out.println("demo.namedUser: " + demo.namedUser);
-        // 期待输出 superUser user user1 user2
+        // 期待输出 superUser user user1 user2 user3 user4
         System.out.println("demo.allUsers: " + demo.allUsers);
         // 期待输出 user1 user2
         System.out.println("demo.qualifiedUsers: " + demo.qualifiedUsers);
