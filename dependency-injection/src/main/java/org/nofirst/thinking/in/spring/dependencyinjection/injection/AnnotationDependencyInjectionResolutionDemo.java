@@ -19,6 +19,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * 返回结果
  *
  * AutowiredAnnotationBeanPostProcessor 可以处理 @Autowired、@Value 和 @Inject 注解
+ * CommonAnnotationBeanPostProcessor 可以处理 @Resource 和 @EJB 注解
  *
  * @date: 2021/03/29
  **/
