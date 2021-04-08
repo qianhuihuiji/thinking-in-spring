@@ -2,13 +2,16 @@ package org.nofirst.thinking.in.spring.iocoverview.domain;
 
 import java.util.Arrays;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import org.nofirst.thinking.in.spring.iocoverview.enums.City;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.core.io.Resource;
 
 /**
  * 用户类
  */
-public class User {
+public class User implements BeanNameAware {
     private Long id;
 
     private String name;
@@ -20,6 +23,11 @@ public class User {
     private List<City> lifeCities;
 
     private Resource configFileLocation;
+
+    /**
+    * 当前 Bean 的名称
+    **/
+    private transient String beanName;
 
     public List<City> getLifeCities() {
         return lifeCities;
@@ -86,5 +94,20 @@ public class User {
         user.setName("emen-create-user");
         user.setId(100L);
         return user;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("User Bean [" + beanName + "] 初始化...");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("User Bean [" + beanName + "] 销毁中...");
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
     }
 }
