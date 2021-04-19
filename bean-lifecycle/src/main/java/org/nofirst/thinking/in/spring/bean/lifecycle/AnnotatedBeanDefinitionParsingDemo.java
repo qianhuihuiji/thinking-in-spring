@@ -23,6 +23,7 @@ public class AnnotatedBeanDefinitionParsingDemo {
         // Bean 名称生成来自于 BeanNameGenerator，注解实现：AnnotationBeanNameGenerator#generateBeanName
         AnnotatedBeanDefinitionParsingDemo annotatedBeanDefinitionParsingDemo = beanFactory.getBean("annotatedBeanDefinitionParsingDemo",
                 AnnotatedBeanDefinitionParsingDemo.class);
+        
         System.out.println(annotatedBeanDefinitionParsingDemo);
     }
 }
