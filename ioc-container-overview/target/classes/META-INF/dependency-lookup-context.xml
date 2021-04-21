@@ -8,6 +8,9 @@
 <!--    <context:annotation-config/>-->
 <!--    <context:component-scan base-package="org.acem"/>-->
 
+    <!-- Root BeanDefinition 不需要合并，不存在 parent -->
+    <!-- 普通 BeanDefinition，GenericBeanDefinition -->
+    <!-- 经合并后，GenericBeanDefinition 变成 RootBeanDefinition -->
     <bean id="user" class="org.nofirst.thinking.in.spring.iocoverview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="emen"/>
@@ -23,6 +26,9 @@
         <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
     </bean>
 
+    <!-- 普通 BeanDefinition，GenericBeanDefinition -->
+    <!-- 经合并后，GenericBeanDefinition 变成 RootBeanDefinition，并且覆盖 parent 相关配置 -->
+    <!-- 在这里，就是 primary=true,增加了 address 属性 -->
     <bean id="superUser" class="org.nofirst.thinking.in.spring.iocoverview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="深圳"/>
     </bean>
