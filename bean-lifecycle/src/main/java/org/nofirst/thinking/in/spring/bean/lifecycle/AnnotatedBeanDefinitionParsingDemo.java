@@ -21,6 +21,7 @@ public class AnnotatedBeanDefinitionParsingDemo {
 
         // 普通的 Class 作为 Component 注册到 Spring IoC 容器之后，通常名称为 annotatedBeanDefinitionParsingDemo
         // Bean 名称生成来自于 BeanNameGenerator，注解实现：AnnotationBeanNameGenerator#generateBeanName
+        // 这个 BeanNameGenerator 可以进行切换，在 AnnotatedBeanDefinitionReader#setBeanNameGenerator 中可以设置
         AnnotatedBeanDefinitionParsingDemo annotatedBeanDefinitionParsingDemo = beanFactory.getBean("annotatedBeanDefinitionParsingDemo",
                 AnnotatedBeanDefinitionParsingDemo.class);
         
